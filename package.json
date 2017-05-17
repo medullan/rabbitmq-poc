@@ -1,7 +1,8 @@
 {
-  "name": "rabbitmq-node-tutorial",
+  "name": "rabbitmq-poc",
   "version": "1.0.0",
-  "description": "RabbitMQ amqp.node tutorial ",
+  "description": "RabbitMQ amqp.node poc ",
+  "main": "src/worker.js",
   "dependencies": {
     "amqplib": "^0.3.2"
   }
