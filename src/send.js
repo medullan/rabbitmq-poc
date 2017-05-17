@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 var amqp = require('amqplib');
-
-amqp.connect('amqp://localhost')
+const connectionString = process.env.AMQ_CONNECTION || `amqp://localhost`;
+amqp.connect(connectionString)
 .then(function(conn) {
   conn.createChannel().then(function( ch) {
     var q = 'task_queue';
-    var msg = 'Hello World2!';
+    var msg = process.argv.slice(2).join(' ') || 'Hello World2!';
 
     ch.assertQueue(q, {durable: true});
     // Note: on Node 6 Buffer.from(msg) should be used
