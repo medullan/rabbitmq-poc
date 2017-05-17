@@ -5,5 +5,8 @@
   "main": "src/worker.js",
   "dependencies": {
     "amqplib": "^0.3.2"
+  },
+  "scripts": {
+    "start": "node ."
   }
 }
