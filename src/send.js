@@ -4,6 +4,7 @@ var amqp = require('amqplib');
 const connectionString = process.env.AMQ_CONNECTION || `amqp://localhost`;
 amqp.connect(connectionString)
 .then(function(conn) {
+  console.log(`Connected to ${connectionString}`);
   conn.createChannel().then(function( ch) {
     var q = 'task_queue';
     var msg = process.argv.slice(2).join(' ') || 'Hello World2!';

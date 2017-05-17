@@ -6,6 +6,7 @@ const connectionString = process.env.AMQ_CONNECTION || `amqp://localhost`;
 const prefetch = parseInt(process.env.AMQ_PREFETCH) || 1;
 
 amqp.connect(connectionString, function(err, conn) {
+  console.log(`Connected to ${connectionString}`);
   conn.createChannel(function(err, ch) {
     var q = 'task_queue';
 
